@@ -14,3 +14,47 @@
 // - con difficoltà 2 => 81 caselle, con un numero compreso tra 1 e 81, divise in 9 caselle per 9 righe;
 // - con difficoltà 3 => 49 caselle, con un numero compreso tra 1 e 49, divise in 7 caselle per 7 righe;
 
+// // recupero il bottone dal dom
+const startButton = document.getElementById("start-button");
+
+// // FUNCTIONS
+
+function createCell(cellNumber){
+    const cell = document.createElement('div');
+    cell.className = 'cell';
+    cell.innerText = cellNumber;
+
+    return cell;
+}
+
+// creo la funzione per modificare il testo all'intyerno del bottone una volta iniziato 
+function play(){
+    // ? PRIMA FASE 
+    // modifica testo 
+    this.innerText = "Restart";
+
+    // recupero la griglia 
+    const grid = document.getElementById('grid');
+
+    // svuoto la griglia 
+    grid.innerHTML = '';
+
+    // ? SECONDA FASE 
+    let rows = 10;
+    let cells = 10;
+    let totalCells = rows * cells;
+
+    // # CORE DEL PROGRAMMA
+    for(let i = 1 ; i <= totalCells ; i++){
+        // // GENERAZIONE CELLA 
+        const cell = createCell(i);
+        // cambio colore cella al click
+        
+        // appendo la cella alla griglia 
+        grid.appendChild(cell)
+    }
+}
+// aggancio la mia funzione ad un event listener
+startButton.addEventListener('click', play);
+
+
