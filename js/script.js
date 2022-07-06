@@ -49,7 +49,15 @@ function play(){
         // // GENERAZIONE CELLA 
         const cell = createCell(i);
         // cambio colore cella al click
-       
+        cell.addEventListener('click' , function(){
+            // ? controllo se gia cliccata 
+            if(this.classList.contains('clicked')){
+                return;
+               
+            }
+            console.log(i);
+            this.classList.add('clicked');
+        })
         // appendo la cella alla griglia 
         grid.appendChild(cell)
     }
