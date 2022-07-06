@@ -49,7 +49,7 @@ function play(){
         // // GENERAZIONE CELLA 
         const cell = createCell(i);
         // cambio colore cella al click
-        
+       
         // appendo la cella alla griglia 
         grid.appendChild(cell)
     }
